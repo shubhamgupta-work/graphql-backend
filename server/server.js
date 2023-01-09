@@ -35,12 +35,15 @@ server.applyMiddleware({ app });
 const PORT = process.env.PORT || 9000;
 
 mongoose
-  .connect("**", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true,
-  })
+  .connect(
+    "mongodb+srv://shubham:zN0wEboXgHyEO0Fr@cluster0.cpxbd4r.mongodb.net/?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useFindAndModify: false,
+      useCreateIndex: true,
+    }
+  )
   .then(() => {
     app.listen(PORT, () => {
       console.log(
